@@ -1,0 +1,20 @@
+{
+    "name": "bideas/cvs-to-tei",
+    "minimum-stability": "stable",
+    "license": "GPLv3",
+    "authors": [
+        {
+            "name": "Andrea Maccis",
+            "email": "andrea.maccis@gmail.com"
+        }
+    ],
+    "require": {
+        "jms/serializer": "^1.10",
+        "symfony/yaml": "^3.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bideas\\CsvToTei\\": "src"
+        }
+    }
+}

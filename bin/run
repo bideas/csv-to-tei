@@ -1,0 +1,22 @@
+#!/usr/bin/env php
+<?php
+/**
+ * @author Andrea Maccis <andrea.maccis@gmail.com>
+ */
+
+use Bideas\CsvToTei\Model\TeiHeader;
+
+$loader = require __DIR__ . '/../vendor/autoload.php';
+
+
+$data = new TeiHeader();
+$data->setFileDesc('aaaa');
+$data->setProfileDesc('oooo');
+
+$metaDataDir = __DIR__ . '/../config/serializer';
+$serializer = JMS\Serializer\SerializerBuilder::create()
+    ->addMetadataDir($metaDataDir, 'Bideas\\CsvToTei')
+    ->build();
+
+$xmlContent = $serializer->serialize($data, 'xml');
+echo $xmlContent; // or return it in a Response

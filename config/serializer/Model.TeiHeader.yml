@@ -1,0 +1,7 @@
+Bideas\CsvToTei\Model\TeiHeader:
+    properties:
+        fileDesc:
+            serialized_name: fileDesc
+            type: string
+        profileDesc:
+            serialized_name: aaaa
