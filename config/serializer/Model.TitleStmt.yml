@@ -1,0 +1,17 @@
+Bideas\CsvToTei\Model\FileDesc:
+    properties:
+        author:
+            serialized_name: author
+            type: string
+        editor:
+            serialized_name: editor
+            type: string
+        meeting:
+            serialized_name: meeting
+            type: string
+        respStmt:
+            serialized_name: respStmt
+            type: string
+        title:
+            serialized_name: title
+            type: string

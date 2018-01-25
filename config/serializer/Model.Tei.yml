@@ -1,0 +1,8 @@
+Bideas\CsvToTei\Model\TeiHeader:
+    properties:
+        teiHeader:
+            serialized_name: teiHeader
+            type: 'Bideas\CsvToTei\Model\TeiHeader'
+        texts:
+            serialized_name: fileDesc
+            type: string

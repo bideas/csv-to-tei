@@ -1,7 +1,17 @@
 Bideas\CsvToTei\Model\TeiHeader:
     properties:
+        encodingDesc:
+            serialized_name: encodingDesc
+            type: string
         fileDesc:
             serialized_name: fileDesc
             type: string
         profileDesc:
-            serialized_name: aaaa
+            serialized_name: profileDesc
+            type: string
+        revisionDesc:
+            serialized_name: revisionDesc
+            type: string
+        xenoData:
+            serialized_name: xenoData
+            type: string
