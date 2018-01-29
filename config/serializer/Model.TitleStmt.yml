@@ -1,17 +1,19 @@
-Bideas\CsvToTei\Model\FileDesc:
+Bideas\CsvToTei\Model\TitleStmt:
     properties:
         author:
+            type: string
             serialized_name: author
-            type: string
         editor:
+            type: string
             serialized_name: editor
-            type: string
         meeting:
+            type: string
             serialized_name: meeting
-            type: string
         respStmt:
+            type: 'Bideas\CsvToTei\Model\RespStmt'
             serialized_name: respStmt
-            type: string
         title:
-            serialized_name: title
             type: string
+            serialized_name: title
+            xml_element:
+                  cdata: false

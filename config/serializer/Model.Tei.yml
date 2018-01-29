@@ -1,8 +1,10 @@
-Bideas\CsvToTei\Model\TeiHeader:
+Bideas\CsvToTei\Model\Tei:
+    xml_root_name: TEI
+    xml_root_namespace: http://www.tei-c.org/ns/1.0
     properties:
         teiHeader:
-            serialized_name: teiHeader
             type: 'Bideas\CsvToTei\Model\TeiHeader'
+            serialized_name: teiHeader
         texts:
-            serialized_name: fileDesc
             type: string
+            serialized_name: texts

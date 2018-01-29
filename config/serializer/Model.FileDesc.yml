@@ -1,23 +1,23 @@
 Bideas\CsvToTei\Model\FileDesc:
     properties:
         editionStmt:
+            type: string
             serialized_name: editionStmt
-            type: string
         extent:
+            type: string
             serialized_name: extent
-            type: string
         notesStmt:
+            type: string
             serialized_name: notesStmt
-            type: string
         publicationStmt:
+            type: string
             serialized_name: publicationStmt
-            type: string
         seriesStmt:
+            type: string
             serialized_name: seriesStmt
-            type: string
         sourceDesc:
+            type: string
             serialized_name: sourceDesc
-            type: string
         titleStmt:
+            type: 'Bideas\CsvToTei\Model\TitleStmt'
             serialized_name: titleStmt
-            type: string

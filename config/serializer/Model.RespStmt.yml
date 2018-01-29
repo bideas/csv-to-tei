@@ -1,0 +1,12 @@
+Bideas\CsvToTei\Model\RespStmt:
+    properties:
+        resp:
+            type: string
+            serialized_name: resp
+            xml_element:
+                  cdata: false
+        name:
+            type: string
+            serialized_name: name
+            xml_element:
+                  cdata: false

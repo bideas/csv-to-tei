@@ -5,13 +5,12 @@
  */
 
 use Bideas\CsvToTei\Model\TeiHeader;
+use Bideas\CsvToTei\TeiBuilder;
 
 $loader = require __DIR__ . '/../vendor/autoload.php';
 
-
-$data = new TeiHeader();
-$data->setFileDesc('aaaa');
-$data->setProfileDesc('oooo');
+$builder = new TeiBuilder();
+$data = $builder->getData();
 
 $metaDataDir = __DIR__ . '/../config/serializer';
 $serializer = JMS\Serializer\SerializerBuilder::create()
@@ -19,4 +18,4 @@ $serializer = JMS\Serializer\SerializerBuilder::create()
     ->build();
 
 $xmlContent = $serializer->serialize($data, 'xml');
-echo $xmlContent; // or return it in a Response
+echo "\n" . $xmlContent . "\n"; // or return it in a Response
