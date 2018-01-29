@@ -1,0 +1,10 @@
+Bideas\CsvToTei\Model\ProjectDesc:
+    properties:
+        p:
+            type: string
+            serialized_name: p
+            xml_element:
+                cdata: false
+        ab:
+            type: string
+            serialized_name: ab

@@ -1,7 +1,7 @@
 Bideas\CsvToTei\Model\TeiHeader:
     properties:
         encodingDesc:
-            type: string
+            type: 'Bideas\CsvToTei\Model\EncodingDesc'
             serialized_name: encodingDesc
         fileDesc:
             type: 'Bideas\CsvToTei\Model\FileDesc'

@@ -5,7 +5,9 @@
 
 namespace Bideas\CsvToTei;
 
+use Bideas\CsvToTei\Model\EncodingDesc;
 use Bideas\CsvToTei\Model\FileDesc;
+use Bideas\CsvToTei\Model\ProjectDesc;
 use Bideas\CsvToTei\Model\RespStmt;
 use Bideas\CsvToTei\Model\Tei;
 use Bideas\CsvToTei\Model\TeiHeader;
@@ -55,6 +57,10 @@ class TeiBuilder
     private function fillInEncodingDesc()
     {
 
+        $encodingDesc = new EncodingDesc();
+        $encodingDesc->setProjectDesc($this->fillInProjectDesc());
+        return $encodingDesc;
+
     }
 
     private function fillInTitleStmt()
@@ -76,5 +82,13 @@ class TeiBuilder
 
     }
 
+    private function fillInProjectDesc()
+    {
+
+        $projectDesc = new ProjectDesc();
+        $projectDesc->setP('This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, http://www.freedict.org. This project aims to make many translating dictionaries available for free. Your contributions are welcome!');
+        return $projectDesc;
+
+    }
 
 }

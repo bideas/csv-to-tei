@@ -1,0 +1,61 @@
+Bideas\CsvToTei\Model\EncodingDesc:
+    properties:
+        p:
+            type: string
+            serialized_name: p
+        charDecl:
+            type: string
+            serialized_name: charDecl
+        appInfo:
+            type: string
+            serialized_name: appInfo
+        classDecl:
+            type: string
+            serialized_name: classDecl
+        editorialDecl:
+            type: string
+            serialized_name: editorialDecl
+            xml_element:
+                  cdata: false
+        geoDecl:
+            type: string
+            serialized_name: geoDecl
+        listPrefixDef:
+            type: string
+            serialized_name: listPrefixDef
+        projectDesc:
+            type: 'Bideas\CsvToTei\Model\ProjectDesc'
+            serialized_name: projectDesc
+        refsDecl:
+            type: string
+            serialized_name: refsDecl
+        samplingDecl:
+            type: string
+            serialized_name: samplingDecl
+        schemaRef:
+            type: string
+            serialized_name: schemaRef
+        styleDefDecl:
+            type: string
+            serialized_name: styleDefDecl
+        tagsDecl:
+            type: string
+            serialized_name: tagsDecl
+        fsdDecl:
+            type: string
+            serialized_name: fsdDecl
+        ab:
+            type: string
+            serialized_name: ab
+        transcriptionDesc:
+            type: string
+            serialized_name: transcriptionDesc
+        schemaSpec:
+            type: string
+            serialized_name: schemaSpec
+        variantEncoding:
+            type: string
+            serialized_name: variantEncoding
+        metDecl:
+            type: string
+            serialized_name: metDecl
