@@ -1,0 +1,34 @@
+Bideas\CsvToTei\Model\EditionStmt:
+    properties:
+        author:
+            type: string
+            serialized_name: author
+        editor:
+            type: string
+            serialized_name: editor
+        meeting:
+            type: string
+            serialized_name: meeting
+        p:
+            type: string
+            serialized_name: p
+        respStmt:
+            type: string
+            serialized_name: respStmt
+        edition:
+            type: string
+            serialized_name: edition
+            xml_element:
+                cdata: false
+        funder:
+            type: string
+            serialized_name: funder
+        principal:
+            type: string
+            serialized_name: principal
+        sponsor:
+            type: string
+            serialized_name: sponsor
+        ab:
+            type: string
+            serialized_name: ab

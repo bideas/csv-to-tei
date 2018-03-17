@@ -5,9 +5,11 @@
 
 namespace Bideas\CsvToTei;
 
+use Bideas\CsvToTei\Model\EditionStmt;
 use Bideas\CsvToTei\Model\EncodingDesc;
 use Bideas\CsvToTei\Model\FileDesc;
 use Bideas\CsvToTei\Model\ProjectDesc;
+use Bideas\CsvToTei\Model\PublicationStmt;
 use Bideas\CsvToTei\Model\RespStmt;
 use Bideas\CsvToTei\Model\Tei;
 use Bideas\CsvToTei\Model\TeiHeader;
@@ -50,6 +52,9 @@ class TeiBuilder
 
         $fileDesc = new FileDesc();
         $fileDesc->setTitleStmt($this->fillInTitleStmt());
+        $fileDesc->setEditionStmt($this->fillInEditionSmtm());
+        $fileDesc->setExtent('4519 headwords');
+        $fileDesc->setPublicationStmt($this->fillInPublicationStmt());
         return $fileDesc;
 
     }
@@ -88,6 +93,24 @@ class TeiBuilder
         $projectDesc = new ProjectDesc();
         $projectDesc->setP('This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, http://www.freedict.org. This project aims to make many translating dictionaries available for free. Your contributions are welcome!');
         return $projectDesc;
+
+    }
+
+    private function fillInEditionSmtm()
+    {
+
+        $editionStmt = new EditionStmt();
+        $editionStmt->setEdition('0.1.0');
+        return $editionStmt;
+
+    }
+
+    private function fillInPublicationStmt()
+    {
+
+        $publicationStmt = new PublicationStmt();
+        $publicationStmt->setPublisher('FreeDict');
+        return $publicationStmt;
 
     }
 

@@ -1,0 +1,40 @@
+Bideas\CsvToTei\Model\PublicationStmt:
+    properties:
+        address:
+            type: string
+            serialized_name: address
+        date:
+            type: string
+            serialized_name: date
+        p:
+            type: string
+            serialized_name: p
+        ptr:
+            type: string
+            serialized_name: ptr
+        pubPlace:
+            type: string
+            serialized_name: pubPlace
+        publisher:
+            type: string
+            serialized_name: publisher
+            xml_element:
+                  cdata: false
+        ref:
+            type: string
+            serialized_name: ref
+        authority:
+            type: string
+            serialized_name: authority
+        availability:
+            type: string
+            serialized_name: availability
+        distributor:
+            type: string
+            serialized_name: distributor
+        idno:
+            type: string
+            serialized_name: idno
+        ab:
+            type: string
+            serialized_name: ab
