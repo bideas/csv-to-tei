@@ -18,7 +18,7 @@ Bideas\CsvToTei\Model\FileDesc:
             type: string
             serialized_name: seriesStmt
         sourceDesc:
-            type: string
+            type: 'Bideas\CsvToTei\Model\SourceDesc'
             serialized_name: sourceDesc
         titleStmt:
             type: 'Bideas\CsvToTei\Model\TitleStmt'

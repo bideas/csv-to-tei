@@ -10,7 +10,7 @@ Bideas\CsvToTei\Model\TeiHeader:
             type: string
             serialized_name: profileDesc
         revisionDesc:
-            type: string
+            type: Bideas\CsvToTei\Model\RevisionDesc
             serialized_name: revisionDesc
         xenoData:
             type: string

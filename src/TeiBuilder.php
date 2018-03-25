@@ -6,9 +6,11 @@
 namespace Bideas\CsvToTei;
 
 use Bideas\CsvToTei\Model\Availability;
+use Bideas\CsvToTei\Model\Change;
 use Bideas\CsvToTei\Model\EditionStmt;
 use Bideas\CsvToTei\Model\EncodingDesc;
 use Bideas\CsvToTei\Model\FileDesc;
+use Bideas\CsvToTei\Model\ListOfItems;
 use Bideas\CsvToTei\Model\Note;
 use Bideas\CsvToTei\Model\NotesStmt;
 use Bideas\CsvToTei\Model\ProjectDesc;
@@ -16,6 +18,8 @@ use Bideas\CsvToTei\Model\PublicationStmt;
 use Bideas\CsvToTei\Model\PubPlace;
 use Bideas\CsvToTei\Model\Ref;
 use Bideas\CsvToTei\Model\RespStmt;
+use Bideas\CsvToTei\Model\RevisionDesc;
+use Bideas\CsvToTei\Model\SourceDesc;
 use Bideas\CsvToTei\Model\Tei;
 use Bideas\CsvToTei\Model\TeiHeader;
 use Bideas\CsvToTei\Model\TitleStmt;
@@ -48,6 +52,7 @@ class TeiBuilder
         $teiHeader = new TeiHeader();
         $teiHeader->setFileDesc($this->fillInFileDesc());
         $teiHeader->setEncodingDesc($this->fillInEncodingDesc());
+        $teiHeader->setRevisionDesc($this->fillInRevisionDesc());
         return $teiHeader;
 
     }
@@ -61,6 +66,7 @@ class TeiBuilder
         $fileDesc->setExtent('4519 headwords');
         $fileDesc->setPublicationStmt($this->fillInPublicationStmt());
         $fileDesc->setNotesStmt($this->fillInNotesStmt());
+        $fileDesc->setSourceDesc($this->fillInSourceDesc());
         return $fileDesc;
 
     }
@@ -96,8 +102,11 @@ class TeiBuilder
     private function fillInProjectDesc()
     {
 
+        $p = [
+            'This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, http://www.freedict.org. This project aims to make many translating dictionaries available for free. Your contributions are welcome!'
+        ];
         $projectDesc = new ProjectDesc();
-        $projectDesc->setP('This dictionary comes to you through nice people making it available for free and for good. It is part of the FreeDict project, http://www.freedict.org. This project aims to make many translating dictionaries available for free. Your contributions are welcome!');
+        $projectDesc->setP($p);
         return $projectDesc;
 
     }
@@ -174,6 +183,62 @@ class TeiBuilder
         $note->setType('status');
         $note->setValue('too small');
         return $note;
+
+    }
+
+    private function fillInSourceDesc()
+    {
+
+        $p = [
+//            'Home: <ptr target="http://www.bideas.org/" ',
+            'This Database was generated from...'
+        ];
+        $sourceDesc = new SourceDesc();
+        $sourceDesc->setP($p);
+        return $sourceDesc;
+
+    }
+
+    private function fillInRevisionDesc()
+    {
+
+        $change = [
+            $this->fillInChange('2018-03-25', 'Andrea Maccis', [
+                'item1',
+                'item2'
+            ]),
+            $this->fillInChange('2018-03-22', 'Andrea Maccis', [
+                'asd1',
+                'asd2'
+            ])
+        ];
+        $revisionDesc = new RevisionDesc();
+        $revisionDesc->setChange($change);
+        return $revisionDesc;
+
+    }
+
+    private function fillInChange($date, $name, $list)
+    {
+
+        $change = new Change();
+        $change->setDate($date);
+        $change->setName($name);
+        $change->setList($this->fillInList($list));
+        return $change;
+
+    }
+
+    private function fillInList($list)
+    {
+
+        $item = [];
+        foreach ($list as $it) {
+            $item[] = $it;
+        }
+        $list = new ListOfItems();
+        $list->setItem($item);
+        return $list;
 
     }
 

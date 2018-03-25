@@ -1,8 +1,13 @@
 Bideas\CsvToTei\Model\EncodingDesc:
     properties:
         p:
-            type: string
+            type: array<string>
             serialized_name: p
+            xml_list:
+                inline: true
+                entry_name: p
+            xml_element:
+                cdata: false
         charDecl:
             type: string
             serialized_name: charDecl

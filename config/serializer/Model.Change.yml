@@ -1,0 +1,15 @@
+Bideas\CsvToTei\Model\Change:
+    properties:
+        date:
+            type: string
+            serialized_name: date
+            xml_element:
+                cdata: false
+        name:
+            type: string
+            serialized_name: name
+            xml_element:
+                cdata: false
+        list:
+            type: Bideas\CsvToTei\List
+            serialized_name: list

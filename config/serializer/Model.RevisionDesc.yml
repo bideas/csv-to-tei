@@ -1,0 +1,14 @@
+Bideas\CsvToTei\Model\RevisionDesc:
+    properties:
+        list:
+            type: 'Bideas\CsvToTei\Model\ListOfItems'
+            serialized_name: list
+        change:
+            type: array<Bideas\CsvToTei\Model\Change>
+            serialized_name: change
+            xml_list:
+                inline: true
+                entry_name: change
+        listChange:
+            type: string
+            serialized_name: listChange

@@ -1,4 +1,4 @@
-Bideas\CsvToTei\Model\ProjectDesc:
+Bideas\CsvToTei\Model\SourceDesc:
     properties:
         p:
             type: array<string>
@@ -8,6 +8,3 @@ Bideas\CsvToTei\Model\ProjectDesc:
                 entry_name: p
             xml_element:
                 cdata: false
-        ab:
-            type: string
-            serialized_name: ab
