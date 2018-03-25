@@ -9,19 +9,37 @@ namespace Bideas\CsvToTei\Model;
 class FileDesc
 {
 
+    private $titleStmt;
+
     private $editionStmt;
 
     private $extent;
 
-    private $notesStmt;
-
     private $publicationStmt;
 
-    private $seriesStmt;
+    private $notesStmt;
 
     private $sourceDesc;
 
-    private $titleStmt;
+    private $seriesStmt;
+
+    /**
+     * @return mixed
+     */
+    public function getTitleStmt()
+    {
+        return $this->titleStmt;
+    }
+
+    /**
+     * @param mixed $titleStmt
+     * @return FileDesc
+     */
+    public function setTitleStmt($titleStmt)
+    {
+        $this->titleStmt = $titleStmt;
+        return $this;
+    }
 
     /**
      * @return mixed
@@ -62,24 +80,6 @@ class FileDesc
     /**
      * @return mixed
      */
-    public function getNotesStmt()
-    {
-        return $this->notesStmt;
-    }
-
-    /**
-     * @param mixed $notesStmt
-     * @return FileDesc
-     */
-    public function setNotesStmt($notesStmt)
-    {
-        $this->notesStmt = $notesStmt;
-        return $this;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getPublicationStmt()
     {
         return $this->publicationStmt;
@@ -98,18 +98,18 @@ class FileDesc
     /**
      * @return mixed
      */
-    public function getSeriesStmt()
+    public function getNotesStmt()
     {
-        return $this->seriesStmt;
+        return $this->notesStmt;
     }
 
     /**
-     * @param mixed $seriesStmt
+     * @param mixed $notesStmt
      * @return FileDesc
      */
-    public function setSeriesStmt($seriesStmt)
+    public function setNotesStmt($notesStmt)
     {
-        $this->seriesStmt = $seriesStmt;
+        $this->notesStmt = $notesStmt;
         return $this;
     }
 
@@ -134,21 +134,19 @@ class FileDesc
     /**
      * @return mixed
      */
-    public function getTitleStmt()
+    public function getSeriesStmt()
     {
-        return $this->titleStmt;
+        return $this->seriesStmt;
     }
 
     /**
-     * @param mixed $titleStmt
+     * @param mixed $seriesStmt
      * @return FileDesc
      */
-    public function setTitleStmt($titleStmt)
+    public function setSeriesStmt($seriesStmt)
     {
-        $this->titleStmt = $titleStmt;
+        $this->seriesStmt = $seriesStmt;
         return $this;
     }
-
-
 
 }

@@ -13,7 +13,7 @@ Bideas\CsvToTei\Model\PublicationStmt:
             type: string
             serialized_name: ptr
         pubPlace:
-            type: string
+            type: 'Bideas\CsvToTei\Model\PubPlace'
             serialized_name: pubPlace
         publisher:
             type: string
@@ -27,7 +27,7 @@ Bideas\CsvToTei\Model\PublicationStmt:
             type: string
             serialized_name: authority
         availability:
-            type: string
+            type: 'Bideas\CsvToTei\Model\Availability'
             serialized_name: availability
         distributor:
             type: string

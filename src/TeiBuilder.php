@@ -5,11 +5,14 @@
 
 namespace Bideas\CsvToTei;
 
+use Bideas\CsvToTei\Model\Availability;
 use Bideas\CsvToTei\Model\EditionStmt;
 use Bideas\CsvToTei\Model\EncodingDesc;
 use Bideas\CsvToTei\Model\FileDesc;
 use Bideas\CsvToTei\Model\ProjectDesc;
 use Bideas\CsvToTei\Model\PublicationStmt;
+use Bideas\CsvToTei\Model\PubPlace;
+use Bideas\CsvToTei\Model\Ref;
 use Bideas\CsvToTei\Model\RespStmt;
 use Bideas\CsvToTei\Model\Tei;
 use Bideas\CsvToTei\Model\TeiHeader;
@@ -72,8 +75,8 @@ class TeiBuilder
     {
 
         $titleStmt = new TitleStmt();
-        $titleStmt->setTitle('Title');
         $titleStmt->setRespStmt($this->fillInRespStmt());
+        $titleStmt->setTitle('Sardinian-Italian FreeDict Dictionary');
         return $titleStmt;
 
     }
@@ -81,8 +84,8 @@ class TeiBuilder
     private function fillInRespStmt()
     {
         $respStmt = new RespStmt();
-        $respStmt->setResp('RESP');
-        $respStmt->setName('NAME');
+        $respStmt->setResp('Mantainer');
+        $respStmt->setName('Andrea Maccis');
         return $respStmt;
 
     }
@@ -110,7 +113,45 @@ class TeiBuilder
 
         $publicationStmt = new PublicationStmt();
         $publicationStmt->setPublisher('FreeDict');
+        $publicationStmt->setAvailability($this->fillInAvailability());
+        $publicationStmt->setPubPlace($this->fillInPubPlace());
         return $publicationStmt;
+
+    }
+
+    private function fillInAvailability()
+    {
+
+        $p = [
+            'Copyright (C) 1999-2017 by various authors listed below.',
+//            'Available under the terms of the <ref target="https://www.gnu.org/licenses/gpl-2.0.html">GNU General Public License ver. 2.0 and any later version</ref>.',
+            'This program is free software; you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.',
+            'This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more details.'
+        ];
+        $availability = new Availability();
+        $availability->setStatus('free');
+        $availability->setP($p);
+        return $availability;
+
+
+    }
+
+    private function fillInPubPlace()
+    {
+
+        $pubPlace = new PubPlace();
+        $pubPlace->setRef($this->fillInRef());
+        return $pubPlace;
+
+    }
+
+    private function fillInRef()
+    {
+
+        $ref = new Ref();
+        $ref->setTarget('http://freedict.org/');
+        $ref->setValue('http://freedict.org/');
+        return $ref;
 
     }
 
