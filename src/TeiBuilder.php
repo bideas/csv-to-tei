@@ -9,6 +9,8 @@ use Bideas\CsvToTei\Model\Availability;
 use Bideas\CsvToTei\Model\EditionStmt;
 use Bideas\CsvToTei\Model\EncodingDesc;
 use Bideas\CsvToTei\Model\FileDesc;
+use Bideas\CsvToTei\Model\Note;
+use Bideas\CsvToTei\Model\NotesStmt;
 use Bideas\CsvToTei\Model\ProjectDesc;
 use Bideas\CsvToTei\Model\PublicationStmt;
 use Bideas\CsvToTei\Model\PubPlace;
@@ -58,6 +60,7 @@ class TeiBuilder
         $fileDesc->setEditionStmt($this->fillInEditionSmtm());
         $fileDesc->setExtent('4519 headwords');
         $fileDesc->setPublicationStmt($this->fillInPublicationStmt());
+        $fileDesc->setNotesStmt($this->fillInNotesStmt());
         return $fileDesc;
 
     }
@@ -152,6 +155,25 @@ class TeiBuilder
         $ref->setTarget('http://freedict.org/');
         $ref->setValue('http://freedict.org/');
         return $ref;
+
+    }
+
+    private function fillInNotesStmt()
+    {
+
+        $notesStmt = new NotesStmt();
+        $notesStmt->setNote($this->fillInNote());
+        return $notesStmt;
+
+    }
+
+    private function fillInNote()
+    {
+
+        $note = new Note();
+        $note->setType('status');
+        $note->setValue('too small');
+        return $note;
 
     }
 

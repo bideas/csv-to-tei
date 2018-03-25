@@ -1,0 +1,11 @@
+Bideas\CsvToTei\Model\NotesStmt:
+    properties:
+        note:
+            type: 'Bideas\CsvToTei\Model\note'
+            serialized_name: note
+        relatedItem:
+            type: string
+            serialized_name: relatedItem
+        witDetail:
+            type: string
+            serialized_name: witDetail

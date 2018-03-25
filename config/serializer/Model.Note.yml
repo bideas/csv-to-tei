@@ -1,0 +1,10 @@
+Bideas\CsvToTei\Model\Note:
+    properties:
+        type:
+            type: string
+            xml_attribute: true
+        value:
+            type: string
+            xml_value: true
+            xml_element:
+                cdata: false

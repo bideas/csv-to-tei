@@ -9,7 +9,7 @@ Bideas\CsvToTei\Model\FileDesc:
             xml_element:
                 cdata: false
         notesStmt:
-            type: string
+            type: 'Bideas\CsvToTei\Model\notesStmt'
             serialized_name: notesStmt
         publicationStmt:
             type: 'Bideas\CsvToTei\Model\publicationStmt'
