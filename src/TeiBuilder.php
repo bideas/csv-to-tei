@@ -222,6 +222,7 @@ class TeiBuilder
     {
 
         $change = new Change();
+        $change->setWhen($date);
         $change->setDate($date);
         $change->setName($name);
         $change->setList($this->fillInList($list));

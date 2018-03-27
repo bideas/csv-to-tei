@@ -1,5 +1,8 @@
 Bideas\CsvToTei\Model\Change:
     properties:
+        when:
+            type: string
+            xml_attribute: true
         date:
             type: string
             serialized_name: date

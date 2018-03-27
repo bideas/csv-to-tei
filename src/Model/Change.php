@@ -9,11 +9,31 @@ namespace Bideas\CsvToTei\Model;
 class Change
 {
 
+    private $when;
+
     private $date;
 
     private $name;
 
     private $list;
+
+    /**
+     * @return mixed
+     */
+    public function getWhen()
+    {
+        return $this->when;
+    }
+
+    /**
+     * @param mixed $when
+     * @return Change
+     */
+    public function setWhen($when)
+    {
+        $this->when = $when;
+        return $this;
+    }
 
     /**
      * @return mixed
