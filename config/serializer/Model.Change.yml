@@ -11,5 +11,5 @@ Bideas\CsvToTei\Model\Change:
             xml_element:
                 cdata: false
         list:
-            type: Bideas\CsvToTei\List
+            type: Bideas\CsvToTei\Model\ListOfItems
             serialized_name: list
